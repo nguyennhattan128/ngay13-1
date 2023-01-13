@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> arrayElement</title>
+</head>
+<body>
+<h2>Sample Screen:</h2>
+<input type="text" id="nhap" >
+<button type="button" id="add" value="value_ad" onclick="add_element_to_array()">Add</button>
+<button type="button" id="display" value="value_display" onclick="display_arry()">Display</button>
+<div id="result"></div>
+<script>
+    let x = 0;
+    let array = Array();
+    function add_element_to_array(){
+        array[x]=document.getElementById("nhap").value;
+        x++;
+        document.getElementById("nhap").value = "";
+        // trả giá trị nhap.value về rông
+    }
+    function display_arry(){
+        let e = "<hr/>"
+        for (let i = 0; i < array.length; i++) {
+            e += "element" + i + "=" + array[i] + "<br/>"
+            //sẽ có ý nghĩa là thêm vào 1 cuối: e + với
+        }
+        document.getElementById("result").innerHTML= e ;
+    }
+</script>
+</body>
+</html>
